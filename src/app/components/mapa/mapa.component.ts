@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpringService } from '../../services/spring.service';
 
 @Component({
   selector: 'app-mapa',
@@ -12,7 +13,21 @@ export class MapaComponent implements OnInit {
   lng = -74.13200;
   zoom = 8;
 
-  constructor() { }
+  constructor(
+    private spring: SpringService,
+  ) { 
+    // console.info(this.spring.get('obtenerListaEPS'));
+    this.prueba()
+  }
+
+  prueba() {
+      this.spring.get('obtenerListaEPS').subscribe( dato => {
+      console.log(dato);
+        
+    }, (error_service) => {
+      console.log(error_service);
+    });
+  }
 
   ngOnInit() {
   }
