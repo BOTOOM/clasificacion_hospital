@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SpringService } from '../../services/spring.service';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   selectEps: boolean;
+  epss: any;
+  selectedEps: number;
 
-  epss: any[] = [
-    { Nombre: "Sanitas", Id: 1},
-    { Nombre: "Cafesalud", Id: 2 }
-  ];
+  constructor(private spring: SpringService) {
+    this.getEps();
+    this.epss = [
+      { Nombre: "Calima", Id: 1},
+      { Nombre: "Famisanar", Id: 2}
+    ]
+  }
 
-  constructor() { }
+  getEps() {
+    this.spring.get('obtenerListaEPS').subscribe( dato => {
+      console.log(dato);
+      this.epss = dato;
+    }, (error_service) => {
+      console.log(error_service);
+    });
+  }
 
   ngOnInit() {
   }

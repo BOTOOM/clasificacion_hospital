@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col align-self-center">
             <h2 style="text-align: left; text-align: right; text-align: center;" > ¿Se está presentando un riesgo inminente?</h2>
-            <button class="btn btn-outline-success btn-lg btn-block" routerLink="/riesgo" type="button">Sí</button>
+            <button class="btn btn-outline-success btn-lg btn-block" routerLink="/busqueda" type="button">Sí</button>
             <button class="btn btn-outline-danger btn-lg btn-block" (click)="selectEps = true" type="button">No</button>
         </div>
     </div>
@@ -18,11 +18,11 @@
         <form>
             <div class="form-group">
                 <h2> Selecciona tu EPS</h2>
-                <select class="form-control" name="eps"> 
+                <select class="form-control" name="eps" [(ngModel)]="selectedEps"> 
                     <option *ngFor="let eps of epss; let i = index" values="index">{{eps.Nombre}}</option>
                 </select>
                 <br>
-                <button class="btn btn-success">Continuar</button>
+                <button class="btn btn-success" routerLink="/bajo-riesgo" *ngIf="selectedEps != undefined">Continuar</button>
             </div>
         </form>
     </div>
