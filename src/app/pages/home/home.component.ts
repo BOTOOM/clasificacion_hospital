@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  epss: any[] = [
+    { Nombre: "Sanitas", Id: 1},
+    { Nombre: "Cafesalud", Id: 2 }
+  ];
+
   constructor() { }
 
   ngOnInit() {

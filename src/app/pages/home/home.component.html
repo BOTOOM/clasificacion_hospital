@@ -1,1 +1,8 @@
 <p>home works!</p>
+
+
+
+<label for="eps"> EPS </label>
+<select name="eps"> 
+    <option *ngFor="let eps of epss; let i = index" values="index">{{eps.Nombre}}</option>
+</select>
