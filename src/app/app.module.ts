@@ -12,6 +12,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapaComponent } from './components/mapa/mapa.component';
 import { BusquedaComponent } from './pages/busqueda/busqueda.component';
+import { LateralBarComponent } from './components/lateral-bar/lateral-bar.component';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { BusquedaComponent } from './pages/busqueda/busqueda.component';
     NavbarComponent,
     HomeComponent,
     MapaComponent,
-    BusquedaComponent
+    BusquedaComponent,
+    LateralBarComponent
   ],
   imports: [
     BrowserModule,
