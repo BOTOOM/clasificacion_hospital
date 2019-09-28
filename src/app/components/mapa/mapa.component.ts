@@ -43,7 +43,13 @@ export class MapaComponent implements OnInit {
           this.lat = position.coords.latitude;
           this.lng = position.coords.longitude;
           console.log(this.lat);
-          console.log(this.lat);
+          console.log(this.lng);
+          this.markers.push({
+          lat: Number(this.lat),
+          lng: Number(this.lng),
+          label: "Usted",
+          draggable: false,
+          });
         }
       },
         (error: PositionError) => console.log(error));
