@@ -13,8 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MapaComponent } from './components/mapa/mapa.component';
 import { BusquedaComponent } from './pages/busqueda/busqueda.component';
 import { LateralBarComponent } from './components/lateral-bar/lateral-bar.component';
-import { RiesgoComponent } from './pages/riesgo/riesgo.component';
-
+import { BajoRiesgoComponent } from './pages/bajo-riesgo/bajo-riesgo.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,7 @@ import { RiesgoComponent } from './pages/riesgo/riesgo.component';
     MapaComponent,
     BusquedaComponent,
     LateralBarComponent,
-    RiesgoComponent
+    BajoRiesgoComponent
   ],
   imports: [
     BrowserModule,
