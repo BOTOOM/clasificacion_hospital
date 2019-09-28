@@ -12,6 +12,7 @@ export class MapaComponent implements OnInit {
   lat = 4.66774;
   lng = -74.13200;
   zoom = 8;
+  markers: Marker[] = [];
 
   constructor(
     private spring: SpringService,
@@ -30,6 +31,34 @@ export class MapaComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getLocation()
   }
 
+   getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position: Position) => {
+        if (position) {
+          console.log("Latitude: " + position.coords.latitude +
+            "Longitude: " + position.coords.longitude);
+          this.lat = position.coords.latitude;
+          this.lng = position.coords.longitude;
+          console.log(this.lat);
+          console.log(this.lat);
+        }
+      },
+        (error: PositionError) => console.log(error));
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
+
+}
+
+
+
+interface Marker {
+lat: number;
+lng: number;
+label?: string;
+draggable: boolean;
 }
