@@ -1,0 +1,41 @@
+<div class="container">
+
+    <div class="row" id="logo">
+        <img src="assets/images/Logo.png" style="text-align: left; text-align: right; text-align: center;" 
+        class="img-fluid" width="200" height="121" alt="Responsive image">
+    </div>
+
+    <div class="row">
+        <div class="col align-self-center">
+            <h2 style="text-align: left; text-align: right; text-align: center;" > ¿Se está presentando un riesgo inminente?</h2>
+            <button class="btn btn-outline-success btn-lg btn-block" routerLink="/riesgo" type="button">Sí</button>
+            <button class="btn btn-outline-danger btn-lg btn-block" (click)="selectEps = true" type="button">No</button>
+        </div>
+    </div>
+
+    <br>
+    <div id="eps" *ngIf="selectEps">
+        <form>
+            <div class="form-group">
+                <h2> Selecciona tu EPS</h2>
+                <select class="form-control" name="eps"> 
+                    <option *ngFor="let eps of epss; let i = index" values="index">{{eps.Nombre}}</option>
+                </select>
+                <br>
+                <button class="btn btn-success">Continuar</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+<!-- lateral bar -->
+<!-- <div class="col-4"> 
+ <app-lateral-bar> </app-lateral-bar>
+</div> -->
+
+<!-- Mapa -->
+<!-- <div class="col-8"> 
+</div> -->
+
